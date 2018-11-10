@@ -1,5 +1,7 @@
 var express=require("express");
+var bodyparser=require("body-parser");
 var app=express();
+app.use(bodyparser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.get("/",function(req,res){
 res.render("landing");
@@ -16,6 +18,10 @@ app.get("/campgrounds",function(req,res)
 app.post("/campgrounds",function(req,res)
 {
     res.send("you hit the post root");
+});
+app.get("/campgrounds/new",function(req,res)
+{
+    res.render("new.ejs");
 });
 app.listen(3000,function()
 {
