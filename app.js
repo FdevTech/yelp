@@ -13,6 +13,10 @@ app.get("/campgrounds",function(req,res)
 	];
 	res.render("campgrounds",{campgrounds:campgrounds});
 });
+app.post("/campgrounds",function(req,res)
+{
+    res.send("you hit the post root");
+});
 app.listen(3000,function()
 {
 console.log("the yelp project has started");
